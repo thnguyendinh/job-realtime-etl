@@ -46,7 +46,6 @@ Thumbs.db
 
 # Các script cũ không dùng
 simulate_realtime.py
-etl_loop.sh
 etl_loop.py
 generate_fake_data.py
 kafka_producer.py
