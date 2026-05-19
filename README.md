@@ -220,8 +220,7 @@ MIT License – hoàn toàn miễn phí sử dụng cho mục đích học tập
 ---
 
 ##  Tác giả
-📧 thang.nd@example.com  *Data Engineer*
-🔗 [GitHub](https://github.com/thnguyendinh)
+🔗 [GitHub](https://github.com/thnguyendinh) *Data Engineer*
 
 ---
 
