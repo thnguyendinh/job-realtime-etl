@@ -1,0 +1,54 @@
+# Logs & runtime
+*.log
+*.pid
+nohup.out
+etl_loop.log
+generator.log
+cleanup.log
+dashboard.log
+
+# Credentials & keys
+*.pem
+*.key
+*.env
+*.secret
+
+# AWS CLI installation (nặng)
+aws/
+awscliv2.zip
+
+# JAR files
+jars/
+*.jar
+
+# Data files (nhạy cảm hoặc lớn)
+*.csv
+search.csv
+tracking.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker & Spark temp
+spark-warehouse/
+metastore_db/
+derby.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Các script cũ không dùng
+simulate_realtime.py
+etl_loop.sh
+etl_loop.py
+generate_fake_data.py
+kafka_producer.py
+test.txt
+spark-apps/etl_iceberg.py
