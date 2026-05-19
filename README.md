@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Tổng quan
+## Tổng quan
 
 Dự án này xây dựng một hệ thống xử lý dữ liệu near‑realtime (gần thực) hoàn chỉnh, bao gồm:
 
@@ -25,7 +25,7 @@ Dự án này xây dựng một hệ thống xử lý dữ liệu near‑realtim
 
 ---
 
-## 🧠 Kiến trúc hệ thống
+##  Kiến trúc hệ thống
 
 ![Architecture](https://via.placeholder.com/800x400?text=Architecture+Diagram+-+S3+%2B+Spark+%2B+Kafka+%2B+MySQL+%2B+Grafana)
 
@@ -37,7 +37,7 @@ Hoặc với Kafka:
 
 ---
 
-## 🚀 Bắt đầu nhanh
+## Bắt đầu nhanh
 
 ### Yêu cầu
 
@@ -56,7 +56,7 @@ export MYSQL_ROOT_PASSWORD="root"
 
 ---
 
-## 🐳 Cài đặt và chạy với Docker
+## Cài đặt và chạy với Docker
 
 ### 1. Clone repository
 
@@ -154,7 +154,7 @@ python3 kafka_producer.py
 
 ---
 
-## 📁 Cấu trúc thư mục dự án
+## Cấu trúc thư mục dự án
 
 ```
 job-realtime-etl/
@@ -177,24 +177,9 @@ job-realtime-etl/
 ├── .gitignore
 └── README.md
 ```
-
 ---
 
-## 🔧 Xử lý sự cố thường gặp
-
-| Vấn đề | Giải pháp |
-|--------|------------|
-| `bitnami/spark:3.5` không tìm thấy | Đã khắc phục bằng Dockerfile tự build từ `python:3.11-slim` + cài PySpark |
-| Spark container exit ngay sau start | Kiểm tra `entrypoint.sh` phải dùng `exec` thay vì gọi script con. |
-| Spark không đọc được S3 (AccessDenied) | Dùng `etl_loop.sh` để refresh credentials IMDSv2 và pass vào spark-submit qua `--conf`. |
-| `PATH_NOT_FOUND` khi đọc S3 | Đường dẫn glob: `raw/events/*/*/*/*/*.json` (5 dấu *) |
-| Kafka `NoBrokersAvailable` | Cấu hình `KAFKA_ADVERTISED_LISTENERS` với INTERNAL và EXTERNAL như trong `docker-compose.yml` |
-| MySQL bảng trống do generator dùng job_id không có trong `search.csv` | Generator chỉ lấy `REAL_JOB_IDS` từ file CSV thật. |
-| Grafana không hiển thị dữ liệu | Kiểm tra data source, time range, và câu SQL. Dùng `docker logs grafana` để debug. |
-
----
-
-## 🧹 Dọn dẹp
+##  Dọn dẹp
 
 Dừng tất cả containers:
 
@@ -218,7 +203,7 @@ aws s3 rm s3://$BUCKET_NAME/raw/events/ --recursive
 
 ---
 
-## 📈 Mở rộng & Tối ưu
+##  Mở rộng & Tối ưu
 
 - **Tăng throughput generator**: giảm `time.sleep(0.15)` xuống 0.05 để đạt ~20 events/s.
 - **Spark streaming** thay vì batch: đọc từ Kafka topic thay vì quét S3.
@@ -228,25 +213,25 @@ aws s3 rm s3://$BUCKET_NAME/raw/events/ --recursive
 
 ---
 
-## 📄 Giấy phép
+##  Giấy phép
 
 MIT License – hoàn toàn miễn phí sử dụng cho mục đích học tập và sản xuất.
 
 ---
 
-## 👥 Tác giả
+##  Tác giả
 📧 thang.nd@example.com  *Data Engineer*
 🔗 [GitHub](https://github.com/thnguyendinh)
 
 ---
 
-## ⭐ Hỗ trợ
+##  Hỗ trợ
 
 Nếu bạn thấy dự án hữu ích, hãy để lại ⭐ trên GitHub. Mọi ý kiến đóng góp hoặc báo lỗi xin tạo Issue.
 
 ---
 
-### 🎯 *Từ ý tưởng đến dashboard chỉ với một lệnh `docker compose up -d`.*
+###  *Từ ý tưởng đến dashboard chỉ với một lệnh `docker compose up -d`.*
 ```
 
 ---
